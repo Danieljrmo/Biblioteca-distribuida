@@ -3,7 +3,6 @@ import requests
 
 app = Flask(__name__)
 
-# Diccionario de rutas por tipo
 RUTAS = {
     "libros": "http://localhost:5001/buscar",
     "articulos": "http://localhost:5002/buscar",
@@ -11,19 +10,39 @@ RUTAS = {
     "revistas": "http://localhost:5004/buscar"
 }
 
-@app.route('/buscar', methods=['GET'])
+# Ajuste de puntaje por edad
+def ajustar_por_edad(doc, edad):
+    categoria = doc.get("categoria", "").lower()
+
+    if 10 <= edad <= 15 and "ficción" in categoria:
+        return 2
+    elif 16 <= edad <= 30 and "tecnología" in categoria:
+        return 2
+    elif edad >= 31 and ("historia" in categoria or "investigación" in categoria):
+        return 2
+    return 0
+
+@app.route('/query', methods=['GET'])
 def buscar():
-    tipo = request.args.get('tipo')
-    termino = request.args.get('q')
-    
-    if tipo not in RUTAS:
-        return jsonify({"error": "Tipo de documento no válido"}), 400
-    
-    try:
-        respuesta = requests.get(RUTAS[tipo], params={'q': termino})
-        return jsonify(respuesta.json())
-    except requests.exceptions.RequestException:
-        return jsonify({"error": "No se pudo contactar al nodo esclavo"}), 500
+    titulo = request.args.get('titulo', '')
+    edad = int(request.args.get('edad', '0'))
+    resultados_totales = []
+
+    for tipo, url in RUTAS.items():
+        try:
+            r = requests.get(url, params={'q': titulo})
+            resultados = r.json()
+            for doc in resultados:
+                doc['tipo'] = tipo
+                doc['puntaje'] += ajustar_por_edad(doc, edad)
+                resultados_totales.append(doc)
+        except Exception as e:
+            print(f"[ERROR] Falló consulta a {tipo}: {e}")
+
+    # Ordenar por puntaje descendente
+    resultados_ordenados = sorted(resultados_totales, key=lambda x: x['puntaje'], reverse=True)
+
+    return jsonify(resultados_ordenados)
 
 if __name__ == '__main__':
-    app.run(port=5000)  # Nodo maestro en el puerto 5000
+    app.run(port=5000)
