@@ -10,6 +10,7 @@ with open('libros.json', 'r', encoding='utf-8') as f:
 @app.route('/buscar', methods=['GET'])
 def buscar():
     termino = request.args.get('q', '').lower()
+    edad = int(request.args.get('edad', 0))
     palabras = termino.split()
 
     resultados = []
@@ -17,7 +18,9 @@ def buscar():
     for doc in datos:
         titulo = doc['titulo'].lower()
         coincidencias = sum(1 for palabra in palabras if palabra in titulo)
-        if coincidencias > 0:
+
+        # Nuevo filtro por edad mínima
+        if coincidencias > 0 and edad >= doc.get('edad_minima', 0):
             doc_resultado = {
                 "id": doc['id'],
                 "titulo": doc['titulo'],
@@ -30,3 +33,4 @@ def buscar():
 
 if __name__ == '__main__':
     app.run(port=5001)
+
