@@ -1,6 +1,9 @@
 # esclavo/libros.py
 from flask import Flask, request, jsonify
 import json
+from datetime import datetime
+from log_rmi_client import enviar_log
+import socket
 
 app = Flask(__name__)
 
@@ -19,11 +22,12 @@ def obtener_preferencia_por_edad(edad):
 @app.route('/buscar', methods=['GET'])
 
 def buscar():
+    inicio = datetime.now()
     titulo = request.args.get('titulo', '').lower()
     edad_str = request.args.get('edad')
     terminos = titulo.split()
     resultados = []
-## aca
+
     try:
         edad = int(edad_str) if edad_str else None
     except:
@@ -44,7 +48,18 @@ def buscar():
             doc_copy = doc.copy()
             doc_copy['ranking'] = ranking
             resultados.append(doc_copy)
-## aca
+    
+    fin = datetime.now()
+    tiempo_total = (fin - inicio).total_seconds()
+    enviar_log(
+    inicio=inicio.isoformat(),
+    fin=fin.isoformat(),
+    maquina=socket.gethostname(),
+    tipo='esclavo',
+    query='viaje',
+    tiempo=tiempo_total,
+    edad=18
+    )
             
     return jsonify(resultados)
 

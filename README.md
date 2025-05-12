@@ -1,7 +1,19 @@
 # Biblioteca-distribuida
 Uso de esquema maestro esclavo para distribuir la carga de trabajo (busqueda) en una biblioteca.
-Para este programa estamos utilizando Python y Flask para las consultas HTTP
-Para desplegarlo se debe ingresar a la carpeta /esclavos y ejecutar ./runEsclavos.py para correr los esclavos de cada tipo de documento.
+
+## Requisitos
+- Python 3.9+
+- Flask
+- Pyro5
+
+## Estructura
+- Maestro en `maestro/`
+- Esclavos en `esclavo/` (libros, videos, revistas, tesis)
+- Servidor RMI en `rmi_server/`
+- Logs centralizados en `logs/central_log.csv`
+
+## Despliegue
+/esclavos y ejecutar ./runEsclavos.py para correr los esclavos de cada tipo de documento.
 Luego se debe ejecutar en un terminal aparte en la carpeta /maestro ./app.py
 Con esto estaremos listos para realizar una búsqueda en un navegador
 Tenemos los siguientes tipos de búsquedas

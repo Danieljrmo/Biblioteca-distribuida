@@ -1,6 +1,9 @@
 # maestro/app.py
 from flask import Flask, request, jsonify
 import requests
+from datetime import datetime
+from log_rmi_client import enviar_log
+import socket
 
 app = Flask(__name__)
 
@@ -14,6 +17,7 @@ esclavos = {
 
 @app.route('/query', methods=['GET'])
 def query():
+    inicio = datetime.now()
     titulo = request.args.get('titulo', '').lower()
     tipos = request.args.get('tipo_doc', '').lower().split()
     edad = request.args.get('edad', '')
@@ -43,6 +47,19 @@ def query():
     # Ordenar por ranking (de mayor a menor)
     resultados_ordenados = sorted(resultados_totales, key=lambda x: x.get('ranking', 0), reverse=True)
 
+
+    fin = datetime.now()
+    tiempo_total = (fin - inicio).total_seconds()
+
+    enviar_log(
+        inicio=inicio.isoformat(),
+        fin=fin.isoformat(),
+        maquina=socket.gethostname(),
+        tipo='maestro',
+        query='viaje',
+        tiempo=tiempo_total,
+        edad=18
+    )
     return jsonify(resultados_ordenados)
 
 if __name__ == '__main__':
