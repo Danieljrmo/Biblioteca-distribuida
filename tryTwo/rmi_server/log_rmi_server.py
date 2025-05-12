@@ -11,7 +11,7 @@ class LogCollector:
         os.makedirs('../logs', exist_ok=True)
         if not os.path.exists(LOG_FILE):
             with open(LOG_FILE, 'w') as f:
-                f.write("inicio,fin,maquina,tipo_maquina,query,tiempo,score,edad\n")
+                f.write("inicio,fin,maquina,tipo_maquina,query,tiempo\n")
 
     def enviar_log(self, log_entry):
         with open(LOG_FILE, 'a') as f:

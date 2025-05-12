@@ -57,9 +57,8 @@ def buscar():
         fin=fin.isoformat(),
         maquina=socket.gethostname(),
         tipo='esclavo',
-        query='viaje',
-        tiempo=tiempo_total,
-        edad=18
+        query='tesis',
+        tiempo=tiempo_total
     )
 
     return jsonify(resultados)

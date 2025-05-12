@@ -56,9 +56,8 @@ def query():
         fin=fin.isoformat(),
         maquina=socket.gethostname(),
         tipo='maestro',
-        query='viaje',
+        query='tipo_doc' if tipos else 'titulo',
         tiempo=tiempo_total,
-        edad=18
     )
     return jsonify(resultados_ordenados)
 

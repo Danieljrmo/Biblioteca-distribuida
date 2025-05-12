@@ -52,13 +52,12 @@ def buscar():
     fin = datetime.now()
     tiempo_total = (fin - inicio).total_seconds()
     enviar_log(
-    inicio=inicio.isoformat(),
-    fin=fin.isoformat(),
-    maquina=socket.gethostname(),
-    tipo='esclavo',
-    query='viaje',
-    tiempo=tiempo_total,
-    edad=18
+        inicio=inicio.isoformat(),
+        fin=fin.isoformat(),
+        maquina=socket.gethostname(),
+        tipo='esclavo',
+        query='libros',
+        tiempo=tiempo_total
     )
             
     return jsonify(resultados)
