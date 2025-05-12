@@ -1,0 +1,55 @@
+[
+    {
+        "id": 1,
+        "titulo": "Análisis de la influencia de las redes sociales en la comunicación política",
+        "autor": "Juan Pérez",
+        "genero": "Tecnologia",
+        "university": "Universidad Nacional",
+        "abstract": "Este estudio investiga cómo las redes sociales han transformado la comunicación política en el siglo XXI, analizando casos específicos y su impacto en la opinión pública."
+    },
+    {
+        "id": 2,
+        "titulo": "Efectos del cambio climático en la biodiversidad marina",
+        "autor": "María López",
+        "genero": "Ciencia Ficcion",
+        "university": "Universidad de Ciencias del Mar",
+        "abstract": "La investigación aborda los efectos del cambio climático en los ecosistemas marinos, centrándose en la pérdida de biodiversidad y sus implicaciones para la pesca sostenible."
+    },
+    {
+        "id": 3,
+        "titulo": "Desarrollo de un sistema de gestión de inventarios basado en la nube",
+        "autor": "Carlos González",
+        "genero": "Tecnologia",
+        "university": "Universidad Tecnológica",
+        "abstract": "Este trabajo presenta el diseño e implementación de un sistema de gestión de inventarios en la nube, mejorando la eficiencia y reduciendo costos operativos."
+    },
+    {
+        "id": 4,
+        "titulo": "Impacto de la inteligencia artificial en la educación",
+        "autor": "Ana Martínez",
+        "genero": "Educacion",
+        "university": "Universidad Educativa",
+        "abstract": "La tesis analiza cómo la inteligencia artificial está transformando el ámbito educativo, desde la personalización del aprendizaje hasta la automatización de tareas administrativas."
+    },
+    {
+        "id": 5,
+        "titulo": "Ecuaciones Diferenciales",
+        "autor": "Dennis Zill",
+        "genero": "Matematicas",
+        "edad_minima": 18
+    },
+    {
+        "id": 6,
+        "titulo": "Allende y la Unidad Popular",
+        "autor": "Luis Veas",
+        "genero": "Historia",
+        "edad_minima": 16
+    },
+    {
+        "id": 6,
+        "titulo": "Allende y sus amigos fantasticos",
+        "autor": "Luis Veas",
+        "genero": "Ciencia Ficcion",
+        "edad_minima": 16
+    }
+]

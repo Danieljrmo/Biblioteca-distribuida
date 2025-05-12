@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "titulo": "Ecuaciones Diferenciales",
+        "autor": "Dennis Zill",
+        "genero": "Matematicas"
+    },
+    {
+        "id": 2,
+        "titulo": "Programación en Python",
+        "autor": "Guido van Rossum",
+        "genero": "Programación"
+    },
+    {
+        "id": 3,
+        "titulo": "Introducción a la Teoría de Números",
+        "autor": "G. H. Hardy",
+        "genero": "Matematicas"
+    },
+    {
+        "id": 4,
+        "titulo": "Fundamentos de Fisica",
+        "autor": "David Halliday",
+        "genero": "Fisica"
+    },
+    {
+        "id": 5,
+        "titulo": "Algoritmos y Estructuras de Datos",
+        "autor": "Robert Sedgewick",
+        "genero": "Programacion"
+    },
+    {
+        "id": 6,
+        "titulo": "Cálculo Avanzado",
+        "autor": "Tom M. Apostol",
+        "genero": "Matematicas"
+    },
+    {
+        "id": 7,
+        "titulo": "Ecuaciones de primer grado",
+        "autor": "Michael Sipser",
+        "genero": "Matematicas"
+    },
+    {
+        "id": 8,
+        "titulo": "Viaje al centro de la Tierra",
+        "autor": "Julio Verne",
+        "genero": "Ciencia Ficcion"
+    },
+    {
+        "id": 8,
+        "titulo": "Viaje en carretera con un programador ",
+        "autor": "Julio Verne",
+        "genero": "Tecnologia"
+    }
+]

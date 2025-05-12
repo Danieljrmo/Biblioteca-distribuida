@@ -24,13 +24,13 @@ def ajustar_por_edad(doc, edad):
 
 @app.route('/query', methods=['GET'])
 def buscar():
-    titulo = request.args.get('titulo', '')
+    titulo = request.args.get('titulo', '').lower()
     edad = int(request.args.get('edad', '0'))
     resultados_totales = []
 
     for tipo, url in RUTAS.items():
         try:
-            r = requests.get(url, params={'q': titulo})
+            r = requests.get(url, params={'q': titulo, edad: edad})
             resultados = r.json()
             for doc in resultados:
                 doc['tipo'] = tipo

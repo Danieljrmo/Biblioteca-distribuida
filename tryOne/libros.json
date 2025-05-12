@@ -1,12 +1,16 @@
 [
   {
+    "id": 1,
     "titulo": "Ecuaciones Diferenciales",
     "autor": "Dennis Zill",
+    "categoria": "Matemáticas",
     "edad_minima": 18
   },
   {
+    "id": 2,
     "titulo": "Programación en Python",
     "autor": "Guido van Rossum",
+    "categoria": "Programación",
     "edad_minima": 16
   }
 ]
