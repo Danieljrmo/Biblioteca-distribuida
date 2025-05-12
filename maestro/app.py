@@ -50,6 +50,8 @@ def query():
 
     fin = datetime.now()
     tiempo_total = (fin - inicio).total_seconds()
+    ## pasar tiempo_total a milisegundos
+    tiempo_total = round(tiempo_total * 1000, 2)
 
     enviar_log(
         inicio=inicio.isoformat(),
