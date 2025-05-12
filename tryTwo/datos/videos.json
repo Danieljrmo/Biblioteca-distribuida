@@ -4,7 +4,6 @@
         "titulo": "Video 1",
         "autor": "Autor 1",
         "genero": "Tecnologia",
-        "edad_minima": 16,
         "url": "http://example.com/video1.mp4"
     },
     {
@@ -12,7 +11,6 @@
         "titulo": "Video 2",
         "autor": "Autor 2",
         "genero": "Tecnologia",
-        "edad_minima": 18,
         "url": "http://example.com/video2.mp4"
     },
     {
@@ -20,7 +18,6 @@
         "titulo": "Video 3",
         "autor": "Autor 3",
         "genero": "Ciencia ficción",
-        "edad_minima": 16,
         "url": "http://example.com/video3.mp4"
     }
 ]

@@ -6,10 +6,10 @@ app = Flask(__name__)
 
 # URLs de los esclavos
 esclavos = {
-    'libro': 'http://localhost:5001/buscar',
-    'video': 'http://localhost:5002/buscar',
+    'libros': 'http://localhost:5001/buscar',
+    'revistas': 'http://localhost:5002/buscar',
     'tesis': 'http://localhost:5003/buscar',
-    'revista': 'http://localhost:5004/buscar'
+    'videos': 'http://localhost:5004/buscar'
 }
 
 @app.route('/query', methods=['GET'])

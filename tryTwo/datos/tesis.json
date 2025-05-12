@@ -3,35 +3,30 @@
         "id": 1,
         "titulo": "Digitalizacion de talleres mecanicos",
         "autor": "Rodrigo Vergara",
-        "genero": "Tecnologia",
-        "edad_minima": 21
+        "genero": "Tecnologia"
     },
     {
         "id": 2,
         "titulo": "Stock distribuido",
         "autor": "Daniel Matamala",
-        "genero": "Tecnologia",
-        "edad_minima": 21
+        "genero": "Tecnologia"
     },
     {
         "id": 3,
         "titulo": "Blockchain y su aplicacion en la industria",
         "autor": "Sebastian Araya",
-        "genero": "Tecnologia",
-        "edad_minima": 21
+        "genero": "Tecnologia"
     },
     {
         "id": 4,
         "titulo": "Blockchain y su aplicacion en la industria",
         "autor": "Sebastian Araya",
-        "genero": "Tecnologia",
-        "edad_minima": 21
+        "genero": "Tecnologia"
     },
     {
         "id": 5,
         "titulo": "Ecuaciones Diferenciales",
         "autor": "Luis Veas",
-        "genero": "Matematicas",
-        "edad_minima": 21
+        "genero": "Matematicas"
     }
 ]
